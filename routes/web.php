@@ -6,6 +6,7 @@ use App\Http\Controllers\Site1Controller;
 use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
 
+Route::view('/', 'welcome');
 
 Route::prefix('site1')->group(function () {
     Route::get('home', [Site1Controller::class, 'index'])->name('index');

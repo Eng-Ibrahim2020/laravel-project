@@ -9,7 +9,12 @@ class Site1Controller extends Controller
 
     public function index()
     {
-        return view('website1.index');
+        $name = "Ibrahim Al-Ashqar";
+        # Passing Data To Views:
+        # 1)
+        // return view('website1.index', ['name' => $name]);
+        # 2)
+        return view('website1.index')->with('name', $name);
     }
 
     public function about()
@@ -21,7 +26,7 @@ class Site1Controller extends Controller
     {
         return view('website1.post');
     }
-    
+
     public function contact()
     {
         return view('website1.contact');
