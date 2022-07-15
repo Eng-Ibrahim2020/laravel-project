@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\FirstControoler;
 use App\Http\Controllers\Site1Controller;
+use App\Http\Controllers\Site3Controller;
 use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,3 +17,10 @@ Route::prefix('site1')->group(function () {
 });
 
 Route::view('site2', 'website2.index')->name('index2');
+
+
+Route::prefix('site3')->group(function () {
+    Route::get('home', [Site3Controller::class, 'index'])->name('index');
+    Route::get('feature', [Site3Controller::class, 'feature'])->name('feature');
+    Route::get('download', [Site3Controller::class, 'download'])->name('download');
+});

@@ -10,11 +10,17 @@ class Site1Controller extends Controller
     public function index()
     {
         $name = "Ibrahim Al-Ashqar";
+        $desc = 'Full-Stack Developer';
         # Passing Data To Views:
         # 1)
-        // return view('website1.index', ['name' => $name]);
+        // return view('website1.index', [
+        //     'name' => $name,
+        //     'desc' => $desc
+        // ]);
         # 2)
-        return view('website1.index')->with('name', $name);
+        // return view('website1.index')->with('name', $name)->with('desc', $desc);
+        # 3)
+        return view('website1.index', compact('name', 'desc'));
     }
 
     public function about()
