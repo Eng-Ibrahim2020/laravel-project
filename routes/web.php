@@ -14,3 +14,4 @@ Route::prefix('site1')->group(function () {
     Route::get('contact', [Site1Controller::class, 'contact'])->name('contact');
 });
 
+Route::view('site2', 'website2.index')->name('index2');
