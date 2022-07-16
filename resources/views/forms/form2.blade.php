@@ -12,6 +12,15 @@
     <form action="{{route('form.form2_data')}}" method="POST">
     @csrf
         <h1 class="text-center text-primary">Register new account</h1>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{$error}}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <div class="form-group my-3">
             <label class="form-label mb-1" for="name">Name</label>
             <input class="form-control" type="text" id="name" name="name" placeholder="Name">

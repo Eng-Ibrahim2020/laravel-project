@@ -27,6 +27,13 @@ class FormsController extends Controller
 
     public function form2_data(Request $request)
     {
+        $request->validate([
+            'name'=>'required|min:3',
+            'email'=>'required|email',
+            'gender'=>'required',
+            'age'=>'required',
+        ]);
+
         $name = $request->name;
         $email = $request->email;
         $gender = $request->gender;
@@ -42,7 +49,12 @@ class FormsController extends Controller
 
     public function form3_data(Request $request)
     {
-        return " ";
+        $request->validate([
+            'email'=>'required|email',
+            'password'=>'required|min:6',
+        ]);
+        dd($request->all());
+
     }
 
     public function form4()
