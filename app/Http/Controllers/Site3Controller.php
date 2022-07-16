@@ -20,4 +20,15 @@ class Site3Controller extends Controller
     {
         return view('website3.download');
     }
+
+    public function contact()
+    {
+        return view('website3.contact');
+    }
+
+    public function contact_data()
+    {
+        return view('website3.contact-data');
+    }
+
 }
