@@ -38,4 +38,3 @@ Route::prefix('form')->name('form.')->group(function () {
     Route::get('form4', [FormsController::class, 'form4'])->name('form4');
     Route::post('form4', [FormsController::class, 'form4_data'])->name('form4_data');
 });
-

@@ -23,22 +23,22 @@
         @endif
         <div class="form-group my-3">
             <label class="form-label mb-1" for="name">Name</label>
-            <input class="form-control" type="text" id="name" name="name" placeholder="Name">
+            <input class="form-control" type="text" id="name" name="name" placeholder="Name"  value="{{old('name')}}">
         </div>
         <div class="form-group my-3">
             <label class="form-label mb-1" for="email">Email</label>
-            <input class="form-control" type="email" id="email" name="email" placeholder="Email">
+            <input class="form-control" type="email" id="email" name="email" placeholder="Email"  value="{{old('email')}}">
         </div>
         <div class="form-group my-3">
             <label class="form-label mb-1" for="gender">Gender</label>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="gender" id="male" value="Male">
+                <input class="form-check-input" type="radio" {{old('gender')=='Male'?'checked':''}} name="gender" id="male" value="Male">
                 <label class="form-check-label" for="male">
                   Male
                 </label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="gender" id="female" value="Female">
+                <input class="form-check-input" type="radio" {{old('gender')=='Female'?'checked':''}} name="gender" id="female" value="Female" >
                 <label class="form-check-label" for="female">
                   Female
                 </label>
@@ -46,7 +46,7 @@
         </div>
         <div class="form-group my-3">
             <label class="form-label mb-1" for="age">Age</label>
-            <input class="form-control" type="text" id="age" name="age" placeholder="Age">
+            <input class="form-control" type="text" id="age" name="age" placeholder="Age" value="{{old('age')}}">
         </div>
         <button class="btn btn-primary w-25">Add</button>
     </form>

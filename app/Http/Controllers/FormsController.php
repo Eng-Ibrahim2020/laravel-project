@@ -54,7 +54,6 @@ class FormsController extends Controller
             'password'=>'required|min:6',
         ]);
         dd($request->all());
-
     }
 
     public function form4()
@@ -64,6 +63,14 @@ class FormsController extends Controller
 
     public function form4_data(Request $request)
     {
-        return " ";
+        $request->validate([
+            'name'=>'required|min:3|max:45',
+            'uploadedFile'=>'required|file|mimes:pdf'
+        ]);
+
+        $name = rand().time().$request->file('uploadedFile')->getClientOriginalName();
+        $request->file('uploadedFile')->move(public_path('uploads'), $name);
+
+        return 'Successfully Uploading File.';
     }
 }
