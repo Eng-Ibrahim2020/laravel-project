@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\FirstControoler;
 use App\Http\Controllers\FormsController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\Site1Controller;
 use App\Http\Controllers\Site3Controller;
 use App\Http\Controllers\SiteController;
@@ -38,3 +39,5 @@ Route::prefix('form')->name('form.')->group(function () {
     Route::get('form4', [FormsController::class, 'form4'])->name('form4');
     Route::post('form4', [FormsController::class, 'form4_data'])->name('form4_data');
 });
+
+Route::get('post', [PostController::class, 'index']);
